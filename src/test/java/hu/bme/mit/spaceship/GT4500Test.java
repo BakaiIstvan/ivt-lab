@@ -28,6 +28,7 @@ public class GT4500Test {
 
     // Assert
     assertEquals(true, result);
+    verify(mockPrimaryTorpedoStore, times(1)).fire(any(int.class));
   }
 
   @Test
@@ -40,6 +41,8 @@ public class GT4500Test {
 
     // Assert
     assertEquals(true, result);
+    verify(mockPrimaryTorpedoStore, times(1)).fire(any(int.class));
+    verify(mockSecondaryTorpedoStore, times(1)).fire(any(int.class));
   }
 
 }
